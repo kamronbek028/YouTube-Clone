@@ -1,0 +1,47 @@
+.search {
+  padding: 2.5rem 0;
+  flex: 0 0 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    background-color: $grey-light-2;
+    border: none;
+    padding: 0.7rem 2rem;
+    border-radius: 100px;
+    width: 90%;
+    transition: all 0.2s;
+    margin-right: -3.5rem;
+
+    &:active {
+      outline: none;
+    }
+
+    &:focus {
+      outline: none;
+      width: 100%;
+    }
+  }
+
+  &__button {
+    background-color: transparent;
+    border: none;
+    color: $grey-dark-2;
+
+    &:active {
+      outline: none;
+      transform: translateY(2px);
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &__icon {
+      font-size: 2rem;
+    }
+  }
+}

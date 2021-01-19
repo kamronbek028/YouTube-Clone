@@ -1,0 +1,43 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include respond(1060) {
+    margin-top: 5rem;
+    .icons-left {
+      order: 1;
+    }
+
+    .icons-right {
+      order: 2;
+    }
+
+    .search {
+      order: 3;
+      flex: 0 0 60%;
+    }
+  }
+
+  @include respond(780) {
+    .icons {
+      & > * {
+        padding: 0 1.5rem;
+      }
+    }
+
+    .nav__icon {
+      font-size: 2.5rem;
+      color: $white;
+      transition: all 0.2s;
+    }
+  }
+
+  @include respond(400) {
+    .icons-right {
+      display: none;
+    }
+  }
+}

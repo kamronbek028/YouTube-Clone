@@ -1,0 +1,37 @@
+// FONTS
+@import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+$font1: "Montserrat", sans-serif;
+$font2: "Fredericka the Great", cursive;
+
+// FONT SIZE
+$default-font-size: 1.6rem;
+
+// COLORS
+$red-light: #e83e8c;
+$red-dark: #fa1616;
+
+$red1: #ff0055;
+$red2: #ee0d58;
+$red3: #e21559;
+$red4: #d61c5a;
+$red5: #cc205a;
+$red6: #c02d5e;
+
+$grey-light-1: #faf9f9;
+$grey-light-2: #f4f2f2;
+$grey-light-3: #f0eeee;
+$grey-light-4: rgb(230, 224, 224);
+
+$grey-dark-1: #777;
+$grey-dark-2: #999;
+$grey-dark-3: rgb(65, 62, 62);
+$grey-dark-4: #1a0d01;
+
+$white: #fff;
+$black: #000;
+
+//SHADOW
+$shadow-light: 0 0.5rem 1rem rgba($black, 0.2);
+$shadow-medium: 0 1rem 2rem rgba($black, 0.2);
+$shadow-dark: 0 1.5rem 4rem rgba($black, 0.4);

@@ -1,3 +1,11 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -9,4 +17,27 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
+
+  @include respond(ultra) {
+    font-size: 85%;
+  }
+}
+
+::selection {
+  background-color: $red4;
+  color: $white;
+}
+
+a:visited,
+a:link {
+  text-decoration: none;
 }

@@ -1,10 +1,15 @@
+@import "abstracts/mixins";
 @import "abstracts/variables";
 
 @import "base/base";
 @import "base/typography";
 
+@import "components/icons";
+@import "components/searchForm";
+
 @import "layout/footer";
 @import "layout/nav";
+@import "layout/sidebar";
 
 @import "pages/error";
 @import "pages/home";
