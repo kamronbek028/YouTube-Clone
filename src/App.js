@@ -7,8 +7,6 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 function App() {
-  const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
-
   return (
     <Router>
       <Navbar />
