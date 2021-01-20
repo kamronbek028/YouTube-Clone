@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <div className="home">
       {isSidebarOpen && <SidebarLinks />}
-      <PopularVideos />
+      <PopularVideos apiKey={apiKey} />
     </div>
   );
 };
