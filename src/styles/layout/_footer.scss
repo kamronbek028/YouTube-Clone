@@ -1,11 +1,11 @@
 .footer {
   font-size: 1.6rem;
   color: $white;
-  margin: 5rem 3rem;
+  padding: 5rem 3rem;
   text-align: center;
 
   @include respond(phone) {
     font-size: 1.4rem;
-    margin: 3rem;
+    margin: 1rem;
   }
 }

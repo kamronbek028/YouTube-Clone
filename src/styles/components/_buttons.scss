@@ -1,0 +1,22 @@
+.button {
+  margin: 3rem 1rem;
+}
+
+.btn {
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &--error {
+    background-color: $grey-light-3;
+    color: $red1;
+    border: 1px solid $white;
+
+    &:hover {
+      color: $grey-light-3;
+      background-color: $red1;
+    }
+  }
+}

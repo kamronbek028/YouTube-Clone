@@ -1,0 +1,16 @@
+.error {
+  grid-column: 1 / -1;
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  border-bottom: 1px solid $white;
+  min-height: calc(100vh - 22rem);
+
+  &__img {
+    width: 70%;
+    margin-bottom: 2rem;
+  }
+}
