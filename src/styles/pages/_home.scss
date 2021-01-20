@@ -9,10 +9,10 @@ body {
     $red6
   );
   background-repeat: no-repeat;
-  min-height: 100vh;
 }
 
 .home {
   display: grid;
   grid-template-columns: 9rem 1fr;
+  min-height: 74vh;
 }
