@@ -10,11 +10,11 @@ const PopularVideos = ({ apiKey }) => {
 
   React.useEffect(() => {
     fetch(
-      `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=48&regionCode=US&key=s${apiKey}`
+      `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=48&regionCode=US&key=${apiKey}`
     )
       .then((result) => result.json())
-      .then((result) => setVideos(result.items));
-    // .then(() => setLoading(false));
+      .then((result) => setVideos(result.items))
+      .then(() => setLoading(false));
   }, [apiKey]);
 
   return (
