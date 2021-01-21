@@ -2,10 +2,11 @@ import React from "react";
 
 import Title from "./Title";
 import Loader from "./Loader";
+import PopularVideo from "./PopularVideo";
 
 const PopularVideos = ({ apiKey }) => {
   const [videos, setVideos] = React.useState();
-  const [loading, setLoading] = React.useState(true);
+  const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
     fetch(
@@ -16,13 +17,10 @@ const PopularVideos = ({ apiKey }) => {
       .then(() => setLoading(false));
   }, [apiKey]);
 
-  console.log("videos", videos);
-  console.log("loading", loading);
-
   return (
     <div className="popular-videos">
-      <Title title="Popular Videos" />
-      {loading && <Loader />}
+      <Title className="popular-videos__heading" title="Popular Videos" />
+      {loading ? <Loader /> : <PopularVideo videos={videos} />}
     </div>
   );
 };

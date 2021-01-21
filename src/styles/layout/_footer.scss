@@ -3,6 +3,8 @@
   color: $white;
   padding: 5rem 3rem;
   text-align: center;
+  border-top: 1px solid $white;
+  margin-top: 2rem;
 
   @include respond(phone) {
     font-size: 1.4rem;
