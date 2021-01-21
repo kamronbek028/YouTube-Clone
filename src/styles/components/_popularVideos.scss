@@ -5,6 +5,7 @@
   grid-row-gap: 1.5rem;
   margin: 3.3rem 2.5rem;
   justify-content: center;
+  align-content: flex-start;
 
   @include respond(780) {
     margin: 1.5rem 2.5rem;
@@ -14,6 +15,15 @@
 
   &__heading {
     grid-column: 1 / -1;
+  }
+
+  .loader {
+    grid-column: 1 / -1;
+    margin-left: -1.5rem;
+
+    @include respond(phone) {
+      margin-left: 0rem;
+    }
   }
 }
 

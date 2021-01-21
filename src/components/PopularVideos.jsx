@@ -6,15 +6,15 @@ import PopularVideo from "./PopularVideo";
 
 const PopularVideos = ({ apiKey }) => {
   const [videos, setVideos] = React.useState();
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
 
   React.useEffect(() => {
     fetch(
-      `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=48&regionCode=US&key=${apiKey}`
+      `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=48&regionCode=US&key=s${apiKey}`
     )
       .then((result) => result.json())
-      .then((result) => setVideos(result.items))
-      .then(() => setLoading(false));
+      .then((result) => setVideos(result.items));
+    // .then(() => setLoading(false));
   }, [apiKey]);
 
   return (

@@ -14,5 +14,5 @@ body {
 .home {
   display: grid;
   grid-template-columns: 9rem 1fr;
-  min-height: 74vh;
+  min-height: calc(100vh - 21rem);
 }
