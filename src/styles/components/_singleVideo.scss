@@ -1,0 +1,22 @@
+.single-video {
+  min-height: calc(100vh - 21rem);
+  grid-column: 1 / 3;
+  margin: 0 10rem;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-column-gap: 2rem;
+
+  @include respond(1250) {
+    grid-template-columns: none;
+    grid-template-rows: 1fr min-content;
+    grid-row-gap: 3rem;
+  }
+
+  @include respond(780) {
+    margin: 0 6rem;
+  }
+
+  @include respond(phone) {
+    margin: 0 4rem;
+  }
+}
