@@ -6,8 +6,6 @@ import FormatNumber from "../functions/FormatNumber";
 import LimitTitle from "../functions/LimitTitle";
 
 const PopularVideo = ({ videos }) => {
-  console.log(videos);
-
   return (
     <>
       {videos &&
@@ -25,7 +23,8 @@ const PopularVideo = ({ videos }) => {
                   <p className="video-title">{LimitTitle(title)}</p>
                   <p className="video-secondary">{channelTitle}</p>
                   <p className="video-secondary">
-                    {FormatNumber(viewCount)} &#8226; {FormatData(publishedAt)}
+                    {FormatNumber(viewCount)} &#8226; {""}
+                    {FormatData(publishedAt)}
                   </p>
                 </div>
               </div>
