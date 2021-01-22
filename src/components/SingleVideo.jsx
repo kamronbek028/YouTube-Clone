@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 import Loader from "./Loader";
 import WatchVideo from "./WatchVideo";
-import NextVideo from "./NextVideo";
+import RelatedVideos from "./RelatedVideos";
 import FormatLocation from "../functions/FormatLocation";
 
 const SingleVideo = () => {
@@ -12,22 +12,23 @@ const SingleVideo = () => {
   const slug = FormatLocation(pathname);
 
   const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
-  const [videos, setVideos] = React.useState();
+  const [watchVideo, setWatchVideo] = React.useState();
   const [channel, setChannel] = React.useState();
+  const [relatedVideos, setRelatedVideos] = React.useState();
   const [loadingWatch, setLoadingWatch] = React.useState(true);
-  const [loadingNext, setLoadingNext] = React.useState(true);
+  const [loadingRelated, setLoadingRelated] = React.useState(true);
 
   React.useEffect(() => {
     fetch(
       `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${slug}&key=${apiKey}`
     )
       .then((result) => result.json())
-      .then((result) => setVideos(result.items[0]));
+      .then((result) => setWatchVideo(result.items[0]));
   }, [apiKey, slug]);
 
   React.useEffect(() => {
-    if (videos) {
-      const { channelId } = videos.snippet;
+    if (watchVideo) {
+      const { channelId } = watchVideo.snippet;
 
       fetch(
         `https://www.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${channelId}&key=${apiKey}`
@@ -36,16 +37,38 @@ const SingleVideo = () => {
         .then((result) => setChannel(result.items[0]))
         .then(() => setLoadingWatch(false));
     }
-  }, [apiKey, videos]);
+  }, [apiKey, watchVideo]);
 
-  console.log(videos);
-  console.log(channel);
-  console.log(loadingWatch);
+  React.useEffect(() => {
+    fetch(
+      `https://www.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${slug}&type=video&maxResults=${14}&key=${apiKey}`
+    )
+      .then((result) => result.json())
+      .then((result) => setRelatedVideos(result.items))
+      .then(() => setLoadingRelated(false));
+  }, [apiKey, slug]);
+
+  console.log("loaderWatch", loadingWatch);
+  console.log("watchVideo", watchVideo);
+  console.log("loaderRelated", loadingRelated);
+  console.log("relatedVideos", relatedVideos);
 
   return (
     <div className="single-video">
-      <div className="watch">{loadingWatch ? <Loader /> : <WatchVideo />}</div>
-      <div className="next">{loadingNext ? <Loader /> : <NextVideo />}</div>
+      <div className="watch">
+        {loadingWatch ? (
+          <Loader />
+        ) : (
+          <WatchVideo watchVideo={watchVideo} channel={channel} />
+        )}
+      </div>
+      <div className="next">
+        {loadingRelated ? (
+          <Loader />
+        ) : (
+          <RelatedVideos relatedVideos={relatedVideos} />
+        )}
+      </div>
     </div>
   );
 };

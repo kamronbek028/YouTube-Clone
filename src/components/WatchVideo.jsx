@@ -1,6 +1,6 @@
 import React from "react";
 
-const WatchVideo = () => {
+const WatchVideo = ({ watchVideo, channel }) => {
   return <div>watch video</div>;
 };
 
