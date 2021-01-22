@@ -24,6 +24,7 @@ const WatchVideo = ({ video, channel }) => {
   return (
     <div className="watch">
       <iframe
+        title={title}
         className="about-video"
         src={`https://www.youtube.com/embed/${id}?autoplay=1`}
         frameBorder="0"
