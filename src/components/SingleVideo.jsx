@@ -59,7 +59,7 @@ const SingleVideo = () => {
         {loadingWatch ? (
           <Loader />
         ) : (
-          <WatchVideo watchVideo={watchVideo} channel={channel} />
+          <WatchVideo video={watchVideo} channel={channel} />
         )}
       </div>
       <div className="next">
