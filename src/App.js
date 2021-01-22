@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Error from "./pages/Error";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import SingleVideo from "./components/SingleVideo";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="*" component={Error} />
+        <Route exact path="/video/:id" component={SingleVideo} />
+        <Route exact path="*" component={Error} />
       </Switch>
       <Footer />
     </Router>

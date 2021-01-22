@@ -1,11 +1,14 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
+import FormatLocation from "../functions/FormatLocation";
 
 const SingleVideo = () => {
-  let history = useHistory();
-  console.log(history);
+  const location = useLocation();
+  const { pathname } = location;
+  const slug = FormatLocation(pathname);
 
-  return <div>{history}</div>;
+  return <div>{slug}</div>;
 };
 
 export default SingleVideo;
