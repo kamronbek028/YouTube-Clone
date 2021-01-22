@@ -50,7 +50,6 @@ const SingleVideo = () => {
 
   console.log("loaderWatch", loadingWatch);
   console.log("watchVideo", watchVideo);
-
   console.log("loaderRelated", loadingRelated);
   console.log("relatedVideos", relatedVideos);
 
