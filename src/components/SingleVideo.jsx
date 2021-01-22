@@ -38,8 +38,8 @@ const SingleVideo = () => {
     }
   }, [apiKey, videos]);
 
-  console.log(channel);
   console.log(videos);
+  console.log(channel);
   console.log(loadingWatch);
 
   return (
