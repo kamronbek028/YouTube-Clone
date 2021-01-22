@@ -18,7 +18,7 @@ const PopularVideo = ({ videos }) => {
           const { viewCount } = video.statistics;
 
           return (
-            <Link to={`/videoID:${id}`} key={index}>
+            <Link to={`/watch?v=${id}`} key={index}>
               <div className="video">
                 <img src={url} alt={title} className="video__img" />
                 <div className="video__info">
