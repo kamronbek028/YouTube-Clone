@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 
 import { FaHeart, FaHeartBroken, FaShare, FaDownload } from "react-icons/fa";
 
 import FormatData from "../functions/FormatData";
-import FormatLocation from "../functions/FormatLocation";
 import FormatNumber from "../functions/FormatNumber";
-import LimitTitle from "../functions/LimitTitle";
 
 const WatchVideo = ({ video, channel }) => {
   const { id } = video;
@@ -77,7 +76,9 @@ const WatchVideo = ({ video, channel }) => {
               </a>
             </div>
 
-            <p className="video-description">{description}</p>
+            <p className="video-description">
+              {<ReactMarkdown source={description} />}
+            </p>
           </div>
         </div>
       </div>
