@@ -5,11 +5,10 @@ import PopularVideos from "../components/PopularVideos";
 
 const Home = () => {
   const apiKey = process.env.REACT_APP_YOUTUBE_API_KEY;
-  const [isSidebarOpen, isSidebarOpenSet] = React.useState(true);
 
   return (
     <div className="home">
-      {isSidebarOpen && <SidebarLinks />}
+      <SidebarLinks />
       <PopularVideos apiKey={apiKey} />
     </div>
   );
