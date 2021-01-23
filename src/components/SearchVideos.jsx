@@ -21,7 +21,8 @@ const SearchVideos = () => {
     )
       .then((result) => result.json())
       .then((result) => setVideos(result.items))
-      .then(() => setLoading(false));
+      .then(() => setLoading(true))
+      .catch(() => setLoading(false));
   }, [apiKey, query]);
 
   return (

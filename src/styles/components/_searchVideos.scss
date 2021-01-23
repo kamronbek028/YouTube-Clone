@@ -25,6 +25,7 @@
 
     @include respond(780) {
       margin: 0 2rem;
+      grid-column: 1 / -1;
     }
 
     &__heading {
@@ -53,6 +54,15 @@
 
       @include respond(780) {
         width: 100%;
+      }
+    }
+
+    .loader {
+      margin-top: -33vh;
+      margin-left: -1.5rem;
+
+      @include respond(phone) {
+        margin-left: 0rem;
       }
     }
   }

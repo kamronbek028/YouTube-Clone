@@ -23,7 +23,8 @@ const SingleVideo = () => {
       `https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${slug}&key=${apiKey}`
     )
       .then((result) => result.json())
-      .then((result) => setWatchVideo(result.items[0]));
+      .then((result) => setWatchVideo(result.items[0]))
+      .catch(() => setLoadingWatch(true));
   }, [apiKey, slug]);
 
   React.useEffect(() => {
@@ -35,7 +36,8 @@ const SingleVideo = () => {
       )
         .then((result) => result.json())
         .then((result) => setChannel(result.items[0]))
-        .then(() => setLoadingWatch(false));
+        .then(() => setLoadingWatch(false))
+        .catch(() => setLoadingWatch(true));
     }
   }, [apiKey, watchVideo]);
 
@@ -45,7 +47,8 @@ const SingleVideo = () => {
     )
       .then((result) => result.json())
       .then((result) => setRelatedVideos(result.items))
-      .then(() => setLoadingRelated(false));
+      .then(() => setLoadingRelated(false))
+      .catch(() => setLoadingRelated(true));
   }, [apiKey, slug]);
 
   return (

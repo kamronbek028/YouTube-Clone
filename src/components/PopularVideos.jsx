@@ -14,7 +14,8 @@ const PopularVideos = ({ apiKey }) => {
     )
       .then((result) => result.json())
       .then((result) => setVideos(result.items))
-      .then(() => setLoading(false));
+      .then(() => setLoading(false))
+      .catch(() => setLoading(true));
   }, [apiKey]);
 
   return (

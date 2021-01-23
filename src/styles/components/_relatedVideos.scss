@@ -26,4 +26,10 @@
     width: 16rem;
     border-radius: 3px;
   }
+
+  .loader {
+    @include respond(1250) {
+      margin-top: -25vh;
+    }
+  }
 }

@@ -1,9 +1,10 @@
 import React from "react";
-import { withRouter, Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import { FaSearch } from "react-icons/fa";
 
-const SearchForm = (props) => {
+const SearchForm = () => {
+  const history = useHistory();
   const [query, setQuery] = React.useState();
 
   return (
@@ -12,7 +13,7 @@ const SearchForm = (props) => {
       onSubmit={(e) => {
         e.preventDefault();
         setQuery(e.target[0].value);
-        props.history.push(`/query/${query}`);
+        history.push(`/query/${query}`);
       }}
     >
       <input type="text" className="search__input" placeholder="Search" />
@@ -23,4 +24,4 @@ const SearchForm = (props) => {
   );
 };
 
-export default withRouter(SearchForm);
+export default SearchForm;
