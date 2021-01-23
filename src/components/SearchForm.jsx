@@ -13,11 +13,14 @@ const SearchForm = () => {
       onSubmit={(e) => {
         e.preventDefault();
         setQuery(e.target[0].value);
-        history.push(`/query/${query}`);
+        e.target[0].value = "";
       }}
     >
       <input type="text" className="search__input" placeholder="Search" />
-      <button className="search__button">
+      <button
+        onClick={history.push(`/query/${query}`)}
+        className="search__button"
+      >
         <FaSearch className="search__button__icon" />
       </button>
     </form>
