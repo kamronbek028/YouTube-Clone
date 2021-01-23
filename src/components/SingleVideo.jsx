@@ -48,11 +48,6 @@ const SingleVideo = () => {
       .then(() => setLoadingRelated(false));
   }, [apiKey, slug]);
 
-  console.log("loaderWatch", loadingWatch);
-  console.log("watchVideo", watchVideo);
-  console.log("loaderRelated", loadingRelated);
-  console.log("relatedVideos", relatedVideos);
-
   return (
     <div className="single-video">
       <div className="watch">

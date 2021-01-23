@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import { useLocation } from "react-router-dom";
 
 import { FaHeart, FaHeartBroken, FaShare, FaDownload } from "react-icons/fa";
 
@@ -20,18 +21,21 @@ const WatchVideo = ({ video, channel }) => {
 
   const { url } = channel.snippet.thumbnails.medium;
   const { subscriberCount } = channel.statistics;
+  const location = useLocation();
 
   return (
     <div className="watch">
-      <iframe
-        title={title}
-        className="about-video"
-        src={`https://www.youtube.com/embed/${id}?autoplay=1`}
-        frameBorder="0"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowFullScreen
-        autoPlay
-      />
+      <div>
+        <iframe
+          title={title}
+          className="about-video"
+          src={`https://www.youtube.com/embed/${id}?autoplay=1`}
+          frameBorder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          autoPlay
+        />
+      </div>
 
       <div className="info">
         <div className="info-top">
@@ -42,22 +46,22 @@ const WatchVideo = ({ video, channel }) => {
             </p>
           </div>
           <div className="video-like">
-            <Link to="">
+            <Link to={location}>
               <FaHeart className="like__icon" />
               <p>{FormatNumber(likeCount)}</p>
             </Link>
 
-            <Link to="">
+            <Link to={location}>
               <FaHeartBroken className="like__icon" />
               <p>{FormatNumber(dislikeCount)}</p>
             </Link>
 
-            <Link to="">
+            <Link to={location}>
               <FaShare className="like__icon" />
               <p>SHARE</p>
             </Link>
 
-            <Link to="">
+            <Link to={location}>
               <FaDownload className="like__icon" />
               <p>DOWNLOAD</p>
             </Link>
@@ -77,9 +81,12 @@ const WatchVideo = ({ video, channel }) => {
               </a>
             </div>
 
-            <p className="video-description">
-              {<ReactMarkdown source={description} />}
-            </p>
+            {
+              <ReactMarkdown
+                className="video-description"
+                source={description}
+              />
+            }
           </div>
         </div>
       </div>

@@ -82,6 +82,7 @@
 
       .video-description {
         grid-column: 2 / 3;
+        overflow: hidden;
 
         @include respond(1250) {
           grid-column: 1 / 3;
