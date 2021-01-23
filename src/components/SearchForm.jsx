@@ -5,7 +5,7 @@ import { FaSearch } from "react-icons/fa";
 
 const SearchForm = () => {
   const history = useHistory();
-  const [query, setQuery] = React.useState();
+  const [query, setQuery] = React.useState("");
 
   return (
     <form
@@ -18,7 +18,7 @@ const SearchForm = () => {
     >
       <input type="text" className="search__input" placeholder="Search" />
       <button
-        onClick={history.push(`/query/${query}`)}
+        onClick={query && history.push(`/query/${query}`)}
         className="search__button"
       >
         <FaSearch className="search__button__icon" />
