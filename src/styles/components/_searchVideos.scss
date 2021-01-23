@@ -1,0 +1,59 @@
+.search {
+  &__img {
+    width: 26rem;
+    height: 16rem;
+    border-radius: 7px;
+    box-shadow: $shadow-medium;
+
+    @include respond(phone) {
+      width: 22rem;
+      height: 14rem;
+    }
+
+    @include respond(400) {
+      width: 18rem;
+      height: 12rem;
+    }
+  }
+
+  &-video {
+    min-height: calc(100vh - 21rem);
+    margin: 3.3rem 0 3.3rem 3.5rem;
+    display: grid;
+    grid-template-rows: auto-fit, min-content;
+    grid-row-gap: 2.5rem;
+
+    @include respond(780) {
+      margin: 0 2rem;
+    }
+
+    &__heading {
+      width: 80%;
+
+      @include respond(780) {
+        width: 100%;
+      }
+    }
+
+    a {
+      width: 80%;
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      grid-column-gap: 2rem;
+      align-items: start;
+      overflow: hidden;
+      height: 100%;
+
+      @include respond(1060) {
+        grid-column-gap: 0;
+        grid-template-columns: none;
+        grid-template-rows: min-content 1fr;
+        grid-row-gap: 2rem;
+      }
+
+      @include respond(780) {
+        width: 100%;
+      }
+    }
+  }
+}
